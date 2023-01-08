@@ -45,7 +45,7 @@ app.use(express.json());
 app.use("/api/auth", authRoute);
 app.use("/api/users", usersRoute);
 app.use("/api/hotels", hotelsRoute);
-app.use("/api/room", roomRoute);
+app.use("/api/rooms", roomRoute);
 
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
