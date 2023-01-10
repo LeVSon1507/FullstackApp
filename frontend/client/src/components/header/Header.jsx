@@ -37,7 +37,6 @@ const Header = ({ type }) => {
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
 
-
   const handleOption = (name, operation) => {
     setOptions((prev) => {
       return {
@@ -48,11 +47,22 @@ const Header = ({ type }) => {
   };
 
   const { dispatch } = useContext(SearchContext);
-
   const handleSearch = () => {
     dispatch({ type: "NEW_SEARCH", payload: { destination, dates, options } });
     navigate("/hotels", { state: { destination, dates, options } });
   };
+
+  const handleValid = () => {
+    alert(
+      "Destination must be one of three locations: DaNang, SaiGon, HaNoi!!!"
+    );
+  };
+
+  const location = ["DaNang", "SaiGon", "HaNoi"];
+  let isDisableBtnSearch = true;
+  if (location.includes(destination)) {
+    isDisableBtnSearch = false;
+  }
 
   return (
     <div className="header">
@@ -90,7 +100,7 @@ const Header = ({ type }) => {
             </h1>
             <p className="headerDesc">
               Get rewarded for your travels – unlock instant savings of 10% or
-              more with a free Lamabooking account
+              more with a free LVSBooking account
             </p>
             {!user && <button className="headerBtn">Sign in / Register</button>}
             <div className="headerSearch">
@@ -198,7 +208,10 @@ const Header = ({ type }) => {
                 )}
               </div>
               <div className="headerSearchItem">
-                <button className="headerBtn" onClick={handleSearch}>
+                <button
+                  className="headerBtn"
+                  onClick={isDisableBtnSearch ? handleValid : handleSearch}
+                >
                   Search
                 </button>
               </div>

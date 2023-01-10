@@ -2,6 +2,8 @@
   height: 100vh;
   display: flex;
   align-items: center;
+  background-image: linear-gradient(#ba8b02, #a17fe0, #181818);
+
   justify-content: center;
 }
 
@@ -11,22 +13,24 @@
   gap: 10px;
 }
 
-.lInput{
+.lInput {
   height: 30px;
   padding: 10px;
+  border-radius: 10px;
+  border: 2px solid black;
 }
 
 .lButton {
   border: none;
   padding: 10px 20px;
-  background-color: #0071c2;
+  background-color: #f29d41;
   color: white;
   font-weight: bold;
   cursor: pointer;
   border-radius: 5px;
 }
 
-.lButton:disabled{
-  background-color: #0071c28c;
+.lButton:disabled {
+  background-color: #7c6122;
   cursor: not-allowed;
 }

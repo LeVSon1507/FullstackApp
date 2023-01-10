@@ -3,6 +3,7 @@ import morgan from "morgan";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 
 //internal
 import authRoute from "./routes/auth.js";
@@ -39,6 +40,7 @@ app.get("/users", (req, res) => {
 });
 
 //==================middleware===============================//
+app.use(cors());
 app.use(cookieParser());
 app.use(express.json());
 
@@ -59,7 +61,7 @@ app.use((err, req, res, next) => {
 });
 
 //=================================================//
-const port = 3000;
+const port = 8080;
 app.listen(port, () => {
   connect();
   console.log(`Connect to backend`);

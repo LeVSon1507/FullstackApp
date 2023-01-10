@@ -1,41 +1,25 @@
 import mongoose from "mongoose";
-
 const RoomSchema = new mongoose.Schema(
   {
     title: {
       type: String,
-      require: true,
+      required: true,
     },
     price: {
       type: Number,
-      require: true,
+      required: true,
     },
     maxPeople: {
       type: Number,
-      require: true,
+      required: true,
     },
     desc: {
       type: String,
-      default: false,
+      required: true,
     },
-    roomNumbers: [
-      {
-        number: Number,
-        unavailableDates: [{ type: Date }],
-      },
-    ],
+    roomNumbers: [{ number: Number, unavailableDates: { type: [Date] } }],
   },
   { timestamps: true }
 );
-
-[
-  { number: 101, unavailableDates: [] },
-  { number: 102, unavailableDates: [] },
-  { number: 103, unavailableDates: [] },
-  { number: 104, unavailableDates: [] },
-  { number: 105, unavailableDates: [] },
-  { number: 106, unavailableDates: [] },
-  { number: 107, unavailableDates: [] },
-];
 
 export default mongoose.model("Room", RoomSchema);
