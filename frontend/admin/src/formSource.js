@@ -3,19 +3,19 @@ export const userInputs = [
     id: "username",
     label: "Username",
     type: "text",
-    placeholder: "john_doe",
+    placeholder: "lvs",
   },
   {
     id: "email",
     label: "Email",
     type: "email",
-    placeholder: "john_doe@gmail.com",
+    placeholder: "lvs@gmail.com",
   },
   {
     id: "phone",
     label: "Phone",
     type: "text",
-    placeholder: "+1 234 567 89",
+    placeholder: "+84 234 567 8",
   },
   {
     id: "password",
@@ -26,13 +26,13 @@ export const userInputs = [
     id: "country",
     label: "Country",
     type: "text",
-    placeholder: "USA",
+    placeholder: "VN",
   },
   {
     id: "city",
     label: "City",
     type: "text",
-    placeholder: "USA",
+    placeholder: "VN",
   },
 ];
 
@@ -86,13 +86,13 @@ export const hotelInputs = [
     id: "city",
     label: "City",
     type: "text",
-    placeholder: "New York",
+    placeholder: "Da Nang",
   },
   {
     id: "address",
     label: "Address",
     type: "text",
-    placeholder: "elton st, 216",
+    placeholder: "01 Ngu Hanh Son",
   },
   {
     id: "distance",

@@ -4,11 +4,12 @@ import Navbar from "../../components/navbar/Navbar";
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const New = ({ inputs, title }) => {
   const [file, setFile] = useState("");
   const [info, setInfo] = useState({});
-
+  const navigate = useNavigate();
   const handleChange = (e) => {
     setInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
@@ -20,18 +21,22 @@ const New = ({ inputs, title }) => {
     data.append("upload_preset", "upload");
     try {
       const uploadRes = await axios.post(
-        "https://api.cloudinary.com/v1_1/lamadev/image/upload",
+        "https://api.cloudinary.com/v1_1/lvson/image/upload",
         data
       );
-
       const { url } = uploadRes.data;
-
       const newUser = {
         ...info,
         img: url,
       };
 
       await axios.post("/auth/register", newUser);
+      try {
+        alert("Add User Success!");
+        navigate("/users");
+      } catch (err) {
+        console.log(err);
+      }
     } catch (err) {
       console.log(err);
     }

@@ -14,12 +14,14 @@
 .lInput{
   height: 30px;
   padding: 10px;
+  border-radius: 10px;
+  border-color: #f29d41;
 }
 
 .lButton {
   border: none;
   padding: 10px 20px;
-  background-color: #0071c2;
+  background-color: #f29d41;
   color: white;
   font-weight: bold;
   cursor: pointer;
@@ -27,6 +29,6 @@
 }
 
 .lButton:disabled{
-  background-color: #0071c28c;
+  background-color: #7c6122;
   cursor: not-allowed;
 }

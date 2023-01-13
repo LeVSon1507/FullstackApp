@@ -41,26 +41,32 @@ const Login = () => {
 
   return (
     <div className="login">
-      <div className="lContainer">
-        <input
-          type="text"
-          placeholder="username"
-          id="username"
-          onChange={handleChange}
-          className="lInput"
-        />
-        <input
-          type="password"
-          placeholder="password"
-          id="password"
-          onChange={handleChange}
-          className="lInput"
-        />
-        <button disabled={loading} onClick={handleClick} className="lButton">
-          Login
-        </button>
-        {error && <span>{error.message}</span>}
-      </div>
+      {loading ? (
+        <div>
+          <h1 style={{ color: "#f29d41" }}>Login...</h1>
+        </div>
+      ) : (
+        <div className="lContainer">
+          <input
+            type="text"
+            placeholder="Username"
+            id="username"
+            onChange={handleChange}
+            className="lInput"
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            id="password"
+            onChange={handleChange}
+            className="lInput"
+          />
+          <button disabled={loading} onClick={handleClick} className="lButton">
+            Login
+          </button>
+          {error && <span>{error.message}</span>}
+        </div>
+      )}
     </div>
   );
 };

@@ -12,22 +12,25 @@ const UserSchema = new mongoose.Schema(
       require: true,
       unique: true,
     },
+    country: {
+      type: String,
+      require: true,
+    },
+    img: {
+      type: String,
+    },
+    city: {
+      type: String,
+      require: true,
+    },
+    phone: {
+      type: String,
+      require: true,
+    },
     password: {
       type: String,
       require: true,
       unique: true,
-    },
-    address: {
-      type: String,
-      require: true,
-    },
-    distance: {
-      type: String,
-      require: true,
-    },
-    desc: {
-      type: String,
-      require: true,
     },
     isAdmin: {
       type: Boolean,
