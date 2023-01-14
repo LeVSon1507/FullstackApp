@@ -3,13 +3,15 @@
 
 Config your MONGO in .env file 
 
-cd backend
-yarn
-yarn start
 
+=========================CONNECT TO BACKEND==========================
+==cd backend==
+==npm i==
+==npm start==
 
-cd frontend 
-cd (admin) client
-yarn 
-yarn start
+========================RUN FRONT-END=================================
+== cd frontend ==
+== cd admin OR client ==
+== yarn == 
+== yarn start ==
 
