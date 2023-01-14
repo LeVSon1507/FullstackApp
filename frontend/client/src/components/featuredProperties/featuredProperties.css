@@ -33,14 +33,15 @@
 }
 
 .fpRating > button {
+  margin: 0px 5px 0px 0px;
   background-image: linear-gradient(#ba8b02, #a17fe0, #181818);
-  color: white;
-  border: none;
-  padding: 3px;
-  margin-right: 10px;
-  font-weight: bold;
-  border-radius: 25px;
   border: 2px solid yellow;
+  padding: 0px 10px 0px 10px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 25px;
+  font-weight: bold;
+  border: none;
 }
 
 .fpRating > span {

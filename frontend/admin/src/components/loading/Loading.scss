@@ -1,14 +1,7 @@
-.login {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.LoadingContainer{
+.LoadingContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10%;
 }
 .loading {
   display: inline-block;
@@ -56,32 +49,4 @@
     height: 72px;
     opacity: 0;
   }
-}
-
-.lContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.lInput{
-  height: 30px;
-  padding: 10px;
-  border-radius: 10px;
-  border-color: #f29d41;
-}
-
-.lButton {
-  border: none;
-  padding: 10px 20px;
-  background-color: #f29d41;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.lButton:disabled{
-  background-color: #7c6122;
-  cursor: not-allowed;
 }

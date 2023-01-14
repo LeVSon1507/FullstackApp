@@ -31,6 +31,9 @@ const Login = () => {
     }
   };
 
+  const handleRegister = () => {
+    navigate("/register");
+  };
   return (
     <div className="login">
       <div className="lContainer">
@@ -50,6 +53,9 @@ const Login = () => {
         />
         <button disabled={loading} onClick={handleClick} className="lButton">
           Login
+        </button>
+        <button disabled={loading} onClick={handleRegister}>
+          Don't have an account?
         </button>
         {error && <span>{error.message}</span>}
       </div>

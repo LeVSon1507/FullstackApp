@@ -1,0 +1,17 @@
+.dropdown {
+}
+.menu {
+  position: absolute;
+  z-index: 1;
+}
+.menu-item {
+  margin: 5px;
+}
+.btnLCT {
+  background-image: linear-gradient(#ba8b02, #a17fe0);
+  border-radius: 10px;
+}
+.btnlct-child {
+  background-color: #febb02;
+  border-radius: 10px;
+}

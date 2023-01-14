@@ -7,6 +7,8 @@ import { format } from "date-fns";
 import { DateRange } from "react-date-range";
 import SearchItem from "../../components/searchItem/SearchItem";
 import useFetch from "../../hooks/useFetch";
+import { LoadingRipple } from "../../components/loading/Loading";
+import DropDownBox from "../../components/dropDownBox/DropDownBox";
 
 const List = () => {
   const location = useLocation();
@@ -34,10 +36,9 @@ const List = () => {
             <h1 className="lsTitle">Search</h1>
             <div className="lsItem">
               <label>Destination</label>
-              <input
-                placeholder={destination}
-                type="text"
-                onChange={(e) => setDestination(e.target.value)}
+              <DropDownBox
+                destination={destination}
+                setDestination={setDestination}
               />
             </div>
             <div className="lsItem">
@@ -110,7 +111,7 @@ const List = () => {
           </div>
           <div className="listResult">
             {loading ? (
-              "loading"
+              <LoadingRipple />
             ) : (
               <>
                 {data.map((item) => (

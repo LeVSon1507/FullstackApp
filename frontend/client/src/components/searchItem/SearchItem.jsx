@@ -1,3 +1,5 @@
+import { faRankingStar, faStarOfLife } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import "./searchItem.css";
 
@@ -22,7 +24,9 @@ const SearchItem = ({ item }) => {
         {item.rating && (
           <div className="siRating">
             <span>Excellent</span>
-            <button>{item.rating}</button>
+            <button className="siRatingButton">
+              {item.rating} <FontAwesomeIcon icon={faRankingStar} />
+            </button>
           </div>
         )}
         <div className="siDetailTexts">

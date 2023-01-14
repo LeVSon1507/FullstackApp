@@ -16,6 +16,8 @@ import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
 import { AuthContext } from "../../context/AuthContext";
+import { ModalCM } from "../commonModal/ModalCM";
+import DropDownBox from "../dropDownBox/DropDownBox";
 
 const Header = ({ type }) => {
   const [destination, setDestination] = useState("");
@@ -33,7 +35,7 @@ const Header = ({ type }) => {
     children: 0,
     room: 1,
   });
-
+  const [modalIsOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
 
@@ -63,6 +65,15 @@ const Header = ({ type }) => {
   if (location.includes(destination)) {
     isDisableBtnSearch = false;
   }
+  const handleClick = () => {
+    setIsOpen(true);
+  };
+  const onClickYes = () => {
+    navigate("/login");
+  };
+  const onClickNo = () => {
+    navigate("/register");
+  };
 
   return (
     <div className="header">
@@ -102,16 +113,24 @@ const Header = ({ type }) => {
               Get rewarded for your travels – unlock instant savings of 10% or
               more with a free LVSBooking account
             </p>
-            {!user && <button className="headerBtn">Sign in / Register</button>}
+            {!user && (
+              <button className="headerBtn" onClick={handleClick}>
+                Sign in / Register
+              </button>
+            )}
             <div className="headerSearch">
               <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faBed} className="headerIcon" />
-                <input
+                <DropDownBox
+                  destination={destination}
+                  setDestination={setDestination}
+                />
+                {/* <input
                   type="text"
                   placeholder="Where are you going?"
                   className="headerSearchInput"
                   onChange={(e) => setDestination(e.target.value)}
-                />
+                /> */}
               </div>
               <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
@@ -219,6 +238,15 @@ const Header = ({ type }) => {
           </>
         )}
       </div>
+      <ModalCM
+        title={"Do you have a account?"}
+        modalIsOpen={modalIsOpen}
+        setIsOpen={setIsOpen}
+        onClickYes={onClickYes}
+        btnYesContent={"Login"}
+        btnNoContent={"Register"}
+        onClickNo={onClickNo}
+      />
     </div>
   );
 };

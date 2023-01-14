@@ -53,8 +53,11 @@ const Datatable = ({ columns }) => {
   return (
     <div className="datatable">
       {loading ? (
-        <div>
-          <h1>Loading...</h1>
+        <div className="LoadingContainer">
+          <div className="loading">
+            <div></div>
+            <div>Loading...</div>
+          </div>
         </div>
       ) : (
         <>

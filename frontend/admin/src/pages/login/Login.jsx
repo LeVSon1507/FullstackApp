@@ -42,8 +42,12 @@ const Login = () => {
   return (
     <div className="login">
       {loading ? (
-        <div>
+        <div className="LoadingContainer">
           <h1 style={{ color: "#f29d41" }}>Login...</h1>
+          <div className="loading">
+            <div></div>
+            <div></div>
+          </div>
         </div>
       ) : (
         <div className="lContainer">
