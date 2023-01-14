@@ -60,7 +60,6 @@
 }
 
 .siDetails {
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -68,17 +67,22 @@
 
 .siRating {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .siRating > span {
   font-weight: 500;
 }
 .siRating > button {
+  margin: 0px 5px 0px 10px;
   background-image: linear-gradient(#ba8b02, #a17fe0, #181818);
   border: 2px solid yellow;
-  color: white;
-  padding: 5px;
+  padding: 0px 10px 0px 10px;
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border-radius: 25px;
   font-weight: bold;
   border: none;

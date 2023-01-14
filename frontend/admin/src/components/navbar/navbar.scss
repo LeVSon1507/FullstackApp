@@ -39,7 +39,14 @@
         align-items: center;
         margin-right: 20px;
         position: relative;
-
+        
+        .btnChangeLgg{
+          background-color: transparent;
+          border: none;
+          display: flex;
+          color: #555;
+          
+        }
         .icon {
           font-size: 20px;
         }

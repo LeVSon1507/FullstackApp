@@ -65,6 +65,7 @@ const Reserve = ({ setOpen, hotelId }) => {
       );
       setOpen(false);
       navigate("/");
+      alert("Rooms has been booked!");
     } catch (err) {}
   };
   return (

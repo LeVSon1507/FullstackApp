@@ -7,11 +7,18 @@ import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNone
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
 import { DarkModeContext } from "../../context/darkModeContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 const Navbar = () => {
   const { dispatch } = useContext(DarkModeContext);
-
+  const [language, setLanguage] = useState("English");
+  const onChangeLanguage = () => {
+    if (language === "English") {
+      setLanguage("Tiếng Việt");
+    } else {
+      setLanguage("English");
+    }
+  };
   return (
     <div className="navbar">
       <div className="wrapper">
@@ -21,8 +28,10 @@ const Navbar = () => {
         </div>
         <div className="items">
           <div className="item">
-            <LanguageOutlinedIcon className="icon" />
-            English
+            <button className="btnChangeLgg" onClick={onChangeLanguage}>
+              <LanguageOutlinedIcon className="icon" />
+              {language}
+            </button>
           </div>
           <div className="item">
             <DarkModeOutlinedIcon
@@ -46,7 +55,7 @@ const Navbar = () => {
           </div>
           <div className="item">
             <img
-              src="https://images.pexels.com/photos/941693/pexels-photo-941693.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+              src="https://scontent.fsgn2-8.fna.fbcdn.net/v/t39.30808-6/270732871_1909175469285496_205538564300404761_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=af6ErbdcPAgAX8LH1-d&_nc_ht=scontent.fsgn2-8.fna&oh=00_AfB8hNow0GZ45U5psQKfPq04dMOO917wTK28qDxwe1OdqA&oe=63C2950A"
               alt=""
               className="avatar"
             />

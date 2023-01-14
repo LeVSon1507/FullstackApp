@@ -1,9 +1,29 @@
 import "./navbar.css";
-import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import React, { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import { LoadingHeart } from "../loading/Loading";
+import { ModalCM } from "../commonModal/ModalCM";
+
 const Navbar = () => {
+  const navigate = useNavigate();
   const { user } = useContext(AuthContext);
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  const handleLogin = () => {
+    navigate("/login");
+  };
+  const handleRegister = () => {
+    navigate("/register");
+  };
+  const onOpenModal = () => {
+    setIsOpen(true);
+  };
+  const onClickYes = () => {
+    localStorage.removeItem("user");
+    window.location.reload(false);
+    navigate("/");
+  };
 
   return (
     <div className="navbar">
@@ -16,15 +36,33 @@ const Navbar = () => {
         <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
           <span className="logo">LVSBOOKING</span>
         </Link>
+        <div className="loadingHeart">
+          <LoadingHeart />
+        </div>
         {user ? (
-          user.username
+          <div style={{ display: "flex" }}>
+            {user.username}
+            <button className="navButton" onClick={onOpenModal}>
+              Logout
+            </button>
+          </div>
         ) : (
           <div className="navItems">
-            <button className="navButton">Register</button>
-            <button className="navButton">Login</button>
+            <button className="navButton" onClick={handleRegister}>
+              Register
+            </button>
+            <button className="navButton" onClick={handleLogin}>
+              Login
+            </button>
           </div>
         )}
       </div>
+      <ModalCM
+        title={"Do you want to logout?"}
+        modalIsOpen={modalIsOpen}
+        setIsOpen={setIsOpen}
+        onClickYes={onClickYes}
+      />
     </div>
   );
 };

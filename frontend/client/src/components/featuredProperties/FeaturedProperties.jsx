@@ -1,13 +1,15 @@
+import { faRankingStar } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useFetch from "../../hooks/useFetch";
+import { LoadingRipple } from "../loading/Loading";
 import "./featuredProperties.css";
 
 const FeaturedProperties = () => {
   const { data, loading, error } = useFetch("/hotels?featured=true&limit=4");
-
   return (
     <div className="fp">
       {loading ? (
-        "Loading"
+        <LoadingRipple />
       ) : (
         <>
           {data.map((item) => (
@@ -20,7 +22,9 @@ const FeaturedProperties = () => {
               </span>
               {item.rating && (
                 <div className="fpRating">
-                  <button>{item.rating}</button>
+                  <button>
+                    {item.rating} <FontAwesomeIcon icon={faRankingStar} />
+                  </button>
                   <span>Excellent</span>
                 </div>
               )}
