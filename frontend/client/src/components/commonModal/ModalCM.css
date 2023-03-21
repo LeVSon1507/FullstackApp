@@ -1,0 +1,32 @@
+.modalTitle {
+   color: #f29d41;
+}
+
+.modalButtonsContainer {
+   display: flex;
+   padding: 10px;
+   justify-content: space-between;
+}
+
+.yes:hover {
+   background-color: red;
+}
+
+.modalButton {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100px;
+   height: 30px;
+   border-radius: 10px;
+   border-width: 4px;
+   background-color: gray;
+   font-size: 16px;
+}
+.btnlct-child .iconHandPointer {
+   display: none;
+}
+
+.btnlct-child:hover .iconHandPointer {
+   display: inline-block;
+}

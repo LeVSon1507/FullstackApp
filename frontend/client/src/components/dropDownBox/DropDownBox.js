@@ -1,3 +1,5 @@
+import { faArrowPointer, faHandPointer, faHandPointLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import "./dropDownBox.css";
 function DropDownBox({ destination, setDestination }) {
@@ -42,18 +44,18 @@ function DropDownBox({ destination, setDestination }) {
         open={open}
         trigger={
           <button onClick={handleOpen} className="btnLCT">
-            {destination ? destination : "Where are you going?"}
+            {destination ? destination : `Let's choose an amazing location!`}
           </button>
         }
         menu={[
           <button onClick={handleMenuOne} className="btnlct-child">
-            Đà Nẵng
+            Đà Nẵng <FontAwesomeIcon icon={faHandPointLeft} className='iconHandPointer' />
           </button>,
           <button onClick={handleMenuTwo} className="btnlct-child">
-            Sài Gòn
+            Sài Gòn <FontAwesomeIcon icon={faHandPointLeft} className='iconHandPointer' />
           </button>,
           <button onClick={handleMenuThree} className="btnlct-child">
-            Hà Nội
+            Hà Nội <FontAwesomeIcon icon={faHandPointLeft} className='iconHandPointer' />
           </button>,
         ]}
       />
