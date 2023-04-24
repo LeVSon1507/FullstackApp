@@ -36,9 +36,7 @@ const Navbar = () => {
         <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
           <span className="logo">LVSBOOKING</span>
         </Link>
-        <div className="loadingHeart">
-          <LoadingHeart />
-        </div>
+        <div className="loadingHeart">{/* <LoadingHeart /> */}</div>
         {user ? (
           <div style={{ display: "flex" }}>
             {user.username}
