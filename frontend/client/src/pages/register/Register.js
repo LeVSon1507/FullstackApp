@@ -64,7 +64,7 @@ const Register = () => {
     navigate("/login");
   };
   return (
-    <div className="login">
+    <div className="loginForm">
       <div className="lContainer">
         <input
           type="text"
@@ -107,10 +107,10 @@ const Register = () => {
         <button disabled={loading} onClick={handleClick} className="lButton">
           Register
         </button>
-        <button disabled={loading} onClick={handleLogin}>
+        <button disabled={loading} onClick={handleLogin} className='lButtonForgot'>
           I have account!
         </button>
-        {error && <span>{error.message}</span>}
+        {error && <span className='lErrorMessage'>{error.message}</span>}
       </div>
     </div>
   );
